@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+	var Cat=function(name,color){
+		this.name=name;
+		this.color=color;
+	}
+	Cat.prototype.type="猫科动物";
+	Cat.prototype.eat=function(){
+		console.log("猫吃鱼");
+	}
+	var cat1=new Cat("小猫","黑色");
+	var cat2=new Cat("大猫","白色");
+	console.log(Cat.prototype.isPrototypeOf(cat2),"isPrototypeOf");//某个prototype对象和某个实例之间的关系
+	console.log(Cat.prototype.isPrototypeOf(cat1),"isPrototypeOf");
+	console.log(cat2.hasOwnProperty("name"),"hasOwnProperty");
+	console.log(cat2.hasOwnProperty("type"),"hasOwnProperty");//每一个实例都有一个hasOwnProperty()方法，用于判断某一个属性到底是本地属性还是继承自prototype对象的属性。
+	console.log("type" in cat2,"in");//in 可以判断某实例有没有这个属性，不管是不是本地属性
+	console.log("name" in cat2,"in");
+	for(var ss in cat2){
+		console.log("cat2["+ss+"]="+cat2[ss])
+	}
+	console.log(cat1.constructor)
+</script>

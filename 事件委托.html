@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="button" id="addLi" value="添加LI">
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>
+<script type="text/javascript">
+	var ul1=document.getElementById('ul1');
+	var addLi=document.getElementById('addLi');
+	var lis=document.getElementsByTagName('li');
+	var num=5;
+	ul1.onmouseover=function(event){
+		e=event.target || window.event.srcElement;
+		console.log(e.nodeName.toLowerCase())
+		if(e.nodeName.toLowerCase()=="li"){
+			e.style.background="red";
+		}
+	}
+	ul1.onmouseout=function(event){
+		e=event.target || window.event.srcElement;
+		console.log(e.nodeName.toLowerCase())
+		if(e.nodeName.toLowerCase()=="li"){
+			e.style.background="";
+		}
+	}
+	addLi.onclick=function(event){
+		e=event.target||window.event.srcElement;
+		num++;
+		var li=document.createElement("li");
+		li.innerHTML=num;
+		ul1.appendChild(li)
+	}
+</script>

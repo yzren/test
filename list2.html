@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title>无标题页</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var aminate=function(){}
+    aminate.prototype.type="动物";
+    var F=function(){};
+    F.prototype=aminate.prototype;
+    var cat=function(name,color){
+        this.name=name;
+        this.color=color;
+    }
+    cat.prototype=F.prototype;
+    cat.prototype=cat;
+    var test=new cat("大猫","red");
+    console.log(cat.prototype,aminate.prototype)
+</script>
